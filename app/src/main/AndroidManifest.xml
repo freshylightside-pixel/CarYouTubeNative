@@ -1,25 +1,18 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.just.youtube">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="Just YouTube"
-        android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true">
-
+        android:allowBackup="true"
+        android:label="Car YouTube"
+        android:supportsRtl="true">
+        
         <service
             android:name=".MyCarService"
             android:exported="true">
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
-                <category android:name="com.google.android.gms.car.application.CATEGORY_NAVIGATION"/>
             </intent-filter>
         </service>
 
-        <meta-data
-            android:name="com.google.android.gms.car.application"
-            android:resource="@xml/automotive_app_desc" />
     </application>
 </manifest>
