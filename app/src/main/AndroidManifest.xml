@@ -7,17 +7,25 @@
         android:label="Car YouTube"
         android:supportsRtl="true">
 
+        <!-- ??????? ??????? ???????? ??????? -->
         <meta-data 
             android:name="com.google.android.car.modules.carapp" 
             android:value="androidx.car.app.CarAppService" />
+        <meta-data 
+            android:name="androidx.car.app.minCarApiLevel" 
+            android:value="1" />
+        <meta-data 
+            android:name="com.android.automotive" 
+            android:resource="@xml/automotive_app_desc" />
 
         <service
             android:name=".MyCarService"
             android:exported="true">
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
-                <category android:name="androidx.car.app.category.POI" />
+                <!-- ?? ????????? ??????? ????? ?????? -->
                 <category android:name="androidx.car.app.category.IOT" />
+                <category android:name="androidx.car.app.category.POI" />
                 <category android:name="androidx.car.app.category.NAVIGATION" />
             </intent-filter>
         </service>
